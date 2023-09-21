@@ -5,6 +5,7 @@ function Content(props) {
                 <img src="Social.png"></img>
             </div>
         )
+        
     }
     return (
         <>
