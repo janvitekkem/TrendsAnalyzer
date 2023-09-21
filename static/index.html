@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Sentiment Analyser</title>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    </style>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="navbar.js" type="text/babel"></script>
+    <script src="form.js" type="text/babel"></script>
+    <script src="content.js" type="text/babel"></script>
+</head>
+
+<body>
+    <div id="mydiv"></div>
+
+    <script type="text/babel">
+        const container = document.getElementById('mydiv');
+        const root = ReactDOM.createRoot(container);
+        const { useState } = React;
+
+        function Main() {
+            const [data, setData] = useState({});
+            return <>
+                <NavBar />
+                <Form setData={setData} />
+                <Content data={data} />
+            </>
+        }
+        root.render(<Main />)
+    </script>
+</body>
+
+</html>
