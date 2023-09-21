@@ -4,6 +4,7 @@ from src.analyzer.custom_serielizer import JSdecoded
 # from src.analyzer.train_model import predict_tweet
 from src.analyzer.utils import process_tweet
 
+
 def sigmoid(z): 
     '''
     Input:
